@@ -5,16 +5,28 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-			int[] array = ArrayErstellen.intArray(5);
 			Scanner sc = new Scanner(System.in);
-			array[0] = 1;
-			array[1] = 2;
-			array[2] = 3;
-			array[3] = 4;
-			array[4] = 5;
+			int[] array = null;
+			int laenge = 0, max = 0, min = 0;
+			boolean zufaelligGefuellt = false;
 			boolean wirdAusgefuehrt = true;
 			char eingabe;
 			
+			System.out.println("Wie lang soll das Array sein?");
+			laenge = sc.nextInt();
+			System.out.println("Zufällig befüllt? (J/N)");
+			zufaelligGefuellt = (sc.next().charAt(0)=='J') ? true: false;
+			
+			if (zufaelligGefuellt) {
+				System.out.println("Minimum der der zufälligen Zahlen eingeben. (nur positive Zahlen erlaubt)");
+				min = sc.nextInt();
+				System.out.println("Maximum der der zufälligen Zahlen eingeben. (nur positive Zahlen erlaubt)");
+				max = sc.nextInt();
+				array = ArrayErstellen.intArray(laenge, true, min, max);
+			} else {
+				array = ArrayErstellen.intArray(laenge);
+			}
+
 			while(wirdAusgefuehrt == true) {
 				System.out.println("Verschieben, oder beenden?");
 				eingabe = sc.next().charAt(0);

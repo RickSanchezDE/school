@@ -21,7 +21,7 @@ public class ArrayVerschieben {
 			}
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < array.length; i++) {
 			System.out.print("[" + array[i] + "]");
 		}
 
@@ -47,7 +47,7 @@ public class ArrayVerschieben {
 			}
 		}
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < array.length; i++) {
 			System.out.print("["+array[i]+"]");
 		}
 		
